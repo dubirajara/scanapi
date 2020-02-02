@@ -34,7 +34,12 @@ class TestAPITree:
             assert request.spec == {
                 "name": "list_all_posts",
                 "method": "get",
-                "tests": [{"status_code_is_200": "response.status_code == 200"}],
+                "tests": [
+                    {
+                        "name": "status_code_is_200",
+                        "test": "response.status_code == 200",
+                    }
+                ],
             }
             assert request.id == "posts_list_all_posts"
             assert request.url == "https://jsonplaceholder.typicode.com/posts"
@@ -57,7 +62,12 @@ class TestAPITree:
                 "name": "list_all_posts",
                 "path": "/posts",
                 "method": "get",
-                "tests": [{"status_code_is_200": "response.status_code == 200"}],
+                "tests": [
+                    {
+                        "name": "status_code_is_200",
+                        "test": "response.status_code == 200",
+                    }
+                ],
             }
             assert len(api_tree.request_nodes) == 1
             assert request.id == "list_all_posts"
@@ -84,7 +94,12 @@ class TestAPITree:
                 "name": "docs",
                 "method": "get",
                 "path": "docs",
-                "tests": [{"status_code_is_200": "response.status_code == 200"}],
+                "tests": [
+                    {
+                        "name": "status_code_is_200",
+                        "test": "response.status_code == 200",
+                    }
+                ],
             }
             assert root_request.id == "docs"
             assert root_request.url == "https://jsonplaceholder.typicode.com/docs"
@@ -96,7 +111,12 @@ class TestAPITree:
             assert endpoint_request.spec == {
                 "name": "list_all_posts",
                 "method": "get",
-                "tests": [{"status_code_is_200": "response.status_code == 200"}],
+                "tests": [
+                    {
+                        "name": "status_code_is_200",
+                        "test": "response.status_code == 200",
+                    }
+                ],
             }
             assert endpoint_request.id == "posts_list_all_posts"
             assert endpoint_request.url == "https://jsonplaceholder.typicode.com/posts"
